@@ -14,17 +14,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-client
-  .query({
-    query: gql`
-      query getAllLinks {
-        url
-        slug
-        if
-      }
-    `
-  })
-  .then((result) => console.log(result));
+// client
+//   .query({
+//     query: gql`
+//       query getAllLinks {
+//         url
+//         slug
+//         if
+//       }
+//     `
+//   })
+//   .then((result) => console.log(result));
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
