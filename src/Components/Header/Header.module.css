@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 20rem;
+  min-height: 25rem;
   padding: 2rem;
   display: flex;
   flex-direction: row;
@@ -11,4 +11,15 @@
 
 .content {
   text-align: left;
+  margin-bottom: 1rem;
+}
+
+.image {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
 }
