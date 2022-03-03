@@ -34,7 +34,7 @@ const ShortenLink = () => {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={submitFormHandler}>
+      <form className={styles.container} onSubmit={submitFormHandler}>
         <TextInput
           onChange={linkChangeHandler}
           value={linkValue}

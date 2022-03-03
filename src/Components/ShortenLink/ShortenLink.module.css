@@ -3,4 +3,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+  padding: 2rem;
+  background-color: #26384a;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
 }
