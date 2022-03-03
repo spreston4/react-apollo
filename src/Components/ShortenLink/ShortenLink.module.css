@@ -6,6 +6,7 @@
   flex-wrap: nowrap;
   padding: 2rem;
   background-color: #26384a;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 700px) {
