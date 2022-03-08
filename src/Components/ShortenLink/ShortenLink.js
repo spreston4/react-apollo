@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import styles from "./ShortenLink.module.css";
 import Button from "../UI/Button/Button";
 import TextInput from "../UI/TextInput/TextInput";
+import LinkDisplay from "../LinkDisplay/LinkDisplay";
 import { CREATE_LINK } from "../../GraphQL/mutations";
 
 const ShortenLink = () => {
@@ -33,21 +34,24 @@ const ShortenLink = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <form className={styles.container} onSubmit={submitFormHandler}>
-        <TextInput
-          onChange={linkChangeHandler}
-          value={linkValue}
-          placeholder="Make your links shorter"
-        />
-        <TextInput
-          onChange={slugChangeHandler}
-          value={slugValue}
-          placeholder="Custom slug"
-        />
-        <Button type="submit">Shorten URL</Button>{" "}
-      </form>
-    </div>
+    <React.Fragment>
+      <div className={styles.container}>
+        <form className={styles.container} onSubmit={submitFormHandler}>
+          <TextInput
+            onChange={linkChangeHandler}
+            value={linkValue}
+            placeholder="Make your links shorter"
+          />
+          <TextInput
+            onChange={slugChangeHandler}
+            value={slugValue}
+            placeholder="Custom slug"
+          />
+          <Button type="submit">Shorten URL</Button>{" "}
+        </form>
+      </div>
+      <LinkDisplay />
+    </React.Fragment>
   );
 };
 

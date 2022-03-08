@@ -9,7 +9,7 @@ export default function App() {
     <div className="App">
       <Header />
       <ShortenLink />
-      <LinkDisplay />
+      {/* <LinkDisplay /> */}
       <Footer />
     </div>
   );
