@@ -1,14 +1,20 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
+import React, { useState, useEffect } from "react";
+import { useMutation, useQuery, defaultDataIdFromObject } from "@apollo/client";
 import styles from "./ShortenLink.module.css";
 import Button from "../UI/Button/Button";
 import TextInput from "../UI/TextInput/TextInput";
 import LinkDisplay from "../LinkDisplay/LinkDisplay";
 import { CREATE_LINK } from "../../GraphQL/mutations";
+import { GET_ALL_LINKS } from "../../GraphQL/queries";
+
+const initialState = {
+  link: "",
+  slug: ""
+};
 
 const ShortenLink = () => {
-  const [linkValue, setLinkValue] = useState("");
-  const [slugValue, setSlugValue] = useState("");
+  const [linkValue, setLinkValue] = useState(initialState.link);
+  const [slugValue, setSlugValue] = useState(initialState.slug);
   const [createLink, { data, loading, error }] = useMutation(CREATE_LINK);
 
   const linkChangeHandler = (event) => {
@@ -29,8 +35,8 @@ const ShortenLink = () => {
       }
     });
 
-    setLinkValue("");
-    setSlugValue("");
+    setLinkValue(initialState.link);
+    setSlugValue(initialState.slug);
   };
 
   return (
@@ -50,7 +56,7 @@ const ShortenLink = () => {
           <Button type="submit">Shorten URL</Button>{" "}
         </form>
       </div>
-      <LinkDisplay linkValue={linkValue} />
+      <LinkDisplay linkUpdate={linkValue} />
     </React.Fragment>
   );
 };

@@ -37,3 +37,8 @@
 .icon {
   pointer-events: none;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+}
