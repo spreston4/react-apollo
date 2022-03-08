@@ -1,12 +1,39 @@
 .container {
+  width: 70%;
+  margin: 0 auto;
   padding: 1rem;
   font-size: 12px;
 }
 
 .linkDiv {
   width: 100%;
+  margin: 0.25rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+
+.link {
+  text-align: left;
+  margin-right: 1.5rem;
+}
+
+.slug {
+  text-align: right;
+  margin: 0 1.5rem;
+}
+
+.copyButton {
+  border: none;
+  color: #2281c2;
+  background-color: white;
+}
+
+.copyButton:hover {
+  color: #26384a;
+}
+
+.icon {
+  pointer-events: none;
 }

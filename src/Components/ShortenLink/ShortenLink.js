@@ -50,7 +50,7 @@ const ShortenLink = () => {
           <Button type="submit">Shorten URL</Button>{" "}
         </form>
       </div>
-      <LinkDisplay />
+      <LinkDisplay linkValue={linkValue} />
     </React.Fragment>
   );
 };
